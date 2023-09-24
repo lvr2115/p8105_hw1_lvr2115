@@ -23,3 +23,6 @@ This is a scatterplot showing the temperature at different hours during days in 
 ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
 ggsave('temp_plot.png', width=6, height=4,dpi=300)
 ```
+#  Problem 2
+
+This code chunk creates a data frame comprised of a random sample of size 10 from a standard Normal distribution, a logical vector indicating whether elements of the sample are greater than 0, a character vector of length 10, and a factor vector of length 10, with 3 different factor “levels”.
