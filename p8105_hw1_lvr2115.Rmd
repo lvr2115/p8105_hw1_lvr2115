@@ -26,3 +26,12 @@ ggsave('temp_plot.png', width=6, height=4,dpi=300)
 #  Problem 2
 
 This code chunk creates a data frame comprised of a random sample of size 10 from a standard Normal distribution, a logical vector indicating whether elements of the sample are greater than 0, a character vector of length 10, and a factor vector of length 10, with 3 different factor “levels”.
+
+```{r new_df_create}
+new_df = tibble(
+  samp = rnorm(10, sd = 1),
+  vec_logical = samp > 0,
+  vec_char = c("x", "y","z","aa","bb","cc","dd","ee","ff","gg"),
+  vec_factor = factor(rep(c("nvr smk", "pst smk", "cur smk"), length.out = 10))
+)
+```
