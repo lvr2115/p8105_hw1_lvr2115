@@ -13,14 +13,16 @@ data("early_january_weather")
 str(early_january_weather)
 ```
 
+## Description of this dataset
 The dataset is a subset of hourly meterological data from LGA, JFK, and EWR airports for January 2013. This dataset `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns. The 15 variables are `r ls(early_january_weather)`.
 
 The mean of the temperature variable is `r mean(pull(early_january_weather, temp))`. 
 
-This is a scatterplot showing the temperature at different hours during days in early January. The color of the data point shows the humidity. It is apparent that temperature fluctuates during the day and temperatures increase during the second week and. third week of january compared to the first. 
+This scatterplot showing the temperature at different hours of the day between January 1 and January 15. The color of the data point shows the relative humidity recorded at the same time and day. It is apparent that temperature fluctuates during the day, temperatures increase during the second week and compared to the first week. Humidity levels and temperatures are both higher on and around January 14.  
 
 ```{r scatterplot}
-ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point() +
+  xlab("Date and hour of recording") +ylab("Temperature in Fahrenheit")
 ggsave('temp_plot.png', width=6, height=4,dpi=300)
 ```
 #  Problem 2
