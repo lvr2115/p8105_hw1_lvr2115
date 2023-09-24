@@ -27,6 +27,8 @@ ggsave('temp_plot.png', width=6, height=4,dpi=300)
 
 This code chunk creates a data frame comprised of a random sample of size 10 from a standard Normal distribution, a logical vector indicating whether elements of the sample are greater than 0, a character vector of length 10, and a factor vector of length 10, with 3 different factor “levels”.
 
+## Creating new data frame
+
 ```{r new_df_create}
 new_df = tibble(
   samp = rnorm(10, sd = 1),
@@ -38,6 +40,7 @@ new_df = tibble(
 
 In this next code chunk, I am trying to take the mean of each variable in my dataframe new_df. 
 
+## Taking the means of each new variables
 
 ```{r var_means}
 mean_samp = mean(pull(new_df, samp))
@@ -49,3 +52,11 @@ mean_factor = mean(pull(new_df, vec_factor))
 ```
 
 I was unable to take the mean of vec_char and vec_factor (returning 'NA' warning) because these are not numeric variables and this is not supported. 
+
+## Converting variables from one type to another 
+```{r var_conversions}
+as.numeric(pull(new_df,vec_logical))
+as.numeric(pull(new_df,vec_char))
+as.numeric(pull(new_df,vec_factor))
+```
+
