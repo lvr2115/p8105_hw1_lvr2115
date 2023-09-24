@@ -60,3 +60,4 @@ as.numeric(pull(new_df,vec_char))
 as.numeric(pull(new_df,vec_factor))
 ```
 
+Applying the as.numeric function to the logical and factor variables coerced their values into numbers corresponding to the different levels. The logical variable values output is now '0' and '1', while the factor variable values output is '1', '2', and '3', corresponding to the 3 levels. Applying the as.numeric function to the character variable returns `NA`, as it did when trying to take the means of this variable. The values of this variable cannot be coerced into numereric values. Output not shown. 
