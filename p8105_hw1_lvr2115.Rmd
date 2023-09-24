@@ -35,3 +35,17 @@ new_df = tibble(
   vec_factor = factor(rep(c("nvr smk", "pst smk", "cur smk"), length.out = 10))
 )
 ```
+
+In this next code chunk, I am trying to take the mean of each variable in my dataframe new_df. 
+
+
+```{r var_means}
+mean_samp = mean(pull(new_df, samp))
+  mean_samp
+mean_log = mean(pull(new_df, vec_logical))
+  mean_log
+mean_char = mean(pull(new_df, vec_char))
+mean_factor = mean(pull(new_df, vec_factor))
+```
+
+I was unable to take the mean of vec_char and vec_factor (returning 'NA' warning) because these are not numeric variables and this is not supported. 
